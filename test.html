@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Career Test | Sciderizer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* Test-page extras (built only from style.css variables) */
+    .test-hero { padding: 60px 20px 50px; background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #fff; text-align: center; border-bottom: 4px solid var(--color-green-mint); }
+    .test-hero h1 { font-size: 2.6rem; font-weight: 800; line-height: 1.1; }
+    .test-hero p { color: var(--color-green-soft); font-weight: 600; margin-top: 12px; font-size: 1.1rem; }
+    .test-section { padding: 70px 0 90px; }
+    .test-wrap { max-width: 760px; margin: 0 auto; }
+    .progress-meta { display: flex; justify-content: space-between; font-family: 'Space Grotesk', sans-serif; font-weight: 800; color: var(--color-blue-dark); font-size: .85rem; margin-bottom: 8px; }
+    .progress-track { height: 16px; background: var(--color-blue-bg); border: 3px solid var(--color-blue-primary); border-radius: var(--radius-pill); overflow: hidden; margin-bottom: 30px; }
+    .progress-fill { height: 100%; width: 0; background: var(--color-green-mint); transition: width .3s ease; }
+    .question-text { font-size: 1.6rem !important; text-transform: none !important; }
+    .options { display: flex; flex-direction: column; gap: 12px; margin-top: 20px; }
+    .opt { background: var(--color-blue-soft); border: 2px solid var(--color-blue-light); color: var(--color-blue-dark); padding: 16px 18px; border-radius: 12px; font-weight: 700; font-size: 1rem; cursor: pointer; text-align: left; transition: var(--transition); }
+    .opt:hover { background: var(--color-blue-primary); color: #fff; transform: translateY(-2px); }
+    .opt.selected { background: var(--color-green-soft); border-color: var(--color-green-primary); color: var(--color-green-dark); }
+    .test-nav { margin-top: 28px; display: flex; justify-content: space-between; }
+    .btn-back { background: transparent; border: 3px solid var(--color-blue-primary); color: var(--color-blue-dark); cursor: pointer; padding: 12px 24px; }
+    .btn-back:hover { background: var(--color-blue-primary); color: #fff; }
+    .btn-back:disabled { opacity: .4; cursor: default; background: transparent; color: var(--color-blue-dark); }
+    .hidden { display: none !important; }
+    .rank-row { margin-top: 16px; }
+    .rank-label { display: flex; justify-content: space-between; font-weight: 800; color: var(--color-blue-dark); font-size: .9rem; margin-bottom: 4px; }
+    .rank-bar { height: 14px; background: var(--color-blue-bg); border-radius: var(--radius-pill); overflow: hidden; }
+    .rank-bar div { height: 100%; background: var(--color-blue-primary); border-radius: var(--radius-pill); transition: width .6s ease; }
+    .rank-row.top .rank-bar div { background: var(--color-green-primary); }
+    .result-list { margin: 14px 0 0 20px; color: var(--text-muted); font-weight: 600; line-height: 1.6; }
+    .result-actions { margin-top: 30px; display: flex; gap: 14px; flex-wrap: wrap; }
+    @media (max-width: 768px) { .navbar { padding: 14px 16px; } nav a:not(.btn-nav) { display: none; } .test-hero h1 { font-size: 1.9rem; } }
+  </style>
+</head>
+<body>
+
+  <div class="ticker-bar">
+    <div class="ticker-track">
+      <span>NO CONFUSION • 100% STEM TALENT • CAREER READY • UNLOCK YOUR POTENTIAL • SCIDERIZER BIO • </span>
+      <span>NO CONFUSION • 100% STEM TALENT • CAREER READY • UNLOCK YOUR POTENTIAL • SCIDERIZER BIO • </span>
+    </div>
+  </div>
+
+  <header class="navbar">
+    <div class="logo">
+      <div class="logo-badge">BIO</div>
+      <span>SCIDERIZER</span>
+    </div>
+    <nav>
+      <a href="index.html#about">The Mission</a>
+      <a href="index.html#questions">High School Stress</a>
+      <a href="index.html#interactive">Talent Finder</a>
+      <a href="index.html" class="btn-nav">Home</a>
+    </nav>
+  </header>
+
+  <section class="test-hero">
+    <div class="pill-badge">✨ CAREER TEST</div>
+    <h1>Which career works best for you?</h1>
+    <p>Answer each question for the most accurate result.</p>
+  </section>
+
+  <section class="test-section">
+    <div class="container">
+      <div class="test-wrap">
+
+        <!-- Quiz -->
+        <div id="quiz">
+          <div class="progress-meta"><span id="progressText">QUESTION 1 OF 46</span><span id="progressPct">0%</span></div>
+          <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+
+          <div class="card-box main-card">
+            <span class="card-tag" id="qTag">QUESTION 1</span>
+            <h3 class="question-text" id="qText"></h3>
+            <div class="options" id="options"></div>
+            <div class="test-nav">
+              <button class="btn btn-back" id="backBtn">&larr; Back</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Results -->
+        <div id="results" class="hidden">
+          <div class="card-box solution-card">
+            <span class="card-tag green-tag">TALENT MATCH FOUND</span>
+            <h2 id="resTitle"></h2>
+            <p class="card-desc" id="resDesc"></p>
+            <ul class="result-list" id="resCareers"></ul>
+            <p class="card-desc" id="resSecond" style="margin-top:18px;"></p>
+            <div id="resBars" style="margin-top:20px;"></div>
+            <div class="result-actions">
+              <button class="btn btn-primary" id="retakeBtn" style="border:none;cursor:pointer;">Retake the Test</button>
+              <a href="index.html" class="btn btn-secondary" style="color:var(--color-blue-dark);border-color:var(--color-blue-primary);">Back to Home</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 SCIDERIZER. Empowering the next generation of scientific minds.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Categories: T = Technical, R = Research, H = Hands on, M = Medical, E = Environmental, null = not scored
+    const CATS = {
+      T: { name: "Technical", title: "Technical & Computational Sciences",
+        desc: "You think in systems, data, and design. You like building, improving, and automating things, and you tend to solve problems with tools and logic.",
+        careers: ["Bioinformatics Scientist", "Data Scientist", "Biomedical Engineer", "Software/AI Developer for Biotech"] },
+      R: { name: "Research", title: "Research & Discovery",
+        desc: "You're driven by learning, asking good questions, and checking your work carefully. Finding out how things really work is what motivates you.",
+        careers: ["Research Scientist", "Geneticist / Molecular Biologist", "Computational Biologist", "Graduate-School Researcher"] },
+      H: { name: "Hands On", title: "Hands-On Lab & Field Work",
+        desc: "You do your best thinking while doing. Running the experiment, using the equipment, and working directly with samples is where you shine.",
+        careers: ["Lab Technician", "Biotechnology Specialist", "Quality Control Analyst", "Clinical Laboratory Scientist"] },
+      M: { name: "Medical", title: "Medical & Health Sciences",
+        desc: "You're motivated by helping people. You care about health, communication, and seeing your work make a real difference for others.",
+        careers: ["Healthcare Professional", "Public Health Specialist", "Toxicologist", "Medical Researcher"] },
+      E: { name: "Environmental", title: "Environmental & Life Systems",
+        desc: "You're drawn to living systems, nature, and the effects of the world around us on life. You want your work to protect or improve ecosystems.",
+        careers: ["Environmental Biotechnologist", "Conservation Scientist", "Ecologist / Evolutionary Biologist", "AgTech & Sustainability Specialist"] }
+    };
+
+    // Each question: [text, [[option, category], ...]]
+    const Q = [
+      ["Which part of the Scientific Process are you best at when it comes to projects and planning?", [["The Observation and Questioning phases, when I find a problem and form my inquiries around it.","T"],["The Research and Hypothesis phases, when I get to learn about a topic and form a plan of action.","R"],["The Experimentation phase, when I get to actively participate in the experiment.","H"]]],
+      ["Which of the following scenarios excites you the most?", [["Building an automatic card-shuffling machine","T"],["Creating an automatic plant-watering system","E"],["Creating a genetically enhanced crop","E"]]],
+      ["When a procedure fails, what is your first course of action?", [["Review each step for error","T"],["Redesign the approach","T"],["Consult a colleague","M"]]],
+      ["How do you prefer to receive instructions?", [["Written","R"],["Verbal","M"],["Visual","T"]]],
+      ["Would you rather improve something that exists or build something new?", [["Improve existing technology","T"],["Create new technology","T"]]],
+      ["How would you rate your effectiveness under pressure?", [["High",null],["Medium",null],["Low",null]]],
+      ["How do you approach problems with no clear solution?", [["By consulting others","M"],["Doing research on the issue","R"]]],
+      ["How would you describe your ability to communicate complex information to others?", [["High","T"],["Medium","R"],["Low","E"]]],
+      ["When a hypothesis fails, what is your first course of action?", [["Review the procedure, in an attempt to find the origin of the error","R"],["Ask an experienced colleague to review your work","M"],["Adjust a single variable and test again","H"]]],
+      ["What keeps you motivated on a long term project?", [["Knowing the fruit of your labor will help others","M"],["Knowing that you are learning something meaningful","R"]]],
+      ["Upon completing an assignment ahead of time, how do you typically use the remaining time?", [["Help a classmate who is struggling","M"],["Review my results for anything I may have missed","R"],["Find a way to work faster next time","T"]]],
+      ["When a collaborator is not contributing equally, what is your approach?", [["Hand them very specific instructions","H"],["Check in to see if something is wrong","M"],["Set up a shared tracking system for progress","T"]]],
+      ["Which form of recognition would you value the most?", [["Being known to be careful and reliable","R"],["Being thanked for helping","M"],["Solving an issue no one could solve","T"]]],
+      ["Which best describes your time management?", [["Careful and steady","R"],["Flexible, I adjust based on the circumstance","T"],["Unfocused, I struggle to do my work in an orderly fashion",null]]],
+      ["In a student-led activity, which role do you take on?", [["Scribe","R"],["Organizer","T"],["Experimenter","H"]]],
+      ["When asked to revise your work, how would you approach it?", [["Re-examine methods","R"],["Ask for feedback from a colleague","M"],["Look for flaws in my logic","T"]]],
+      ["How would you prepare for an exam?", [["Review the given material by the teacher","R"],["Go home and make a study guide for yourself","T"],["Study with a group","M"]]],
+      ["When you are given unfamiliar lab equipment, what is your first approach?", [["Read the procedure and see what the instructions are","R"],["Ask an experienced individual to show you","M"],["Search using other methods","T"]]],
+      ["How do you keep notes?", [["Detailed, organized, and concise","R"],["Short entries like bullet points of the important parts","T"],["Disorganized and messy",null]]],
+      ["What is your first step when you are planning a project?", [["Designing the experiment","T"],["Researching the requirements/materials needed","R"],["Considering what organizations could assist in the development of the project","M"]]],
+      ["How do you ensure your work is accurate?", [["Repeat the experiment to see if results vary","H"],["Compare it to existing data","R"],["Check each step for inaccuracies","T"]]],
+      ["If a single method gives different results, what is your course of action?", [["Run the experiment again, but with a control group","H"],["Compare the results","R"],["Build a model and redo the experiment","T"]]],
+      ["How would you go about breaking down a large assignment?", [["Divide the assignment into stages and complete them accordingly","R"],["Split the work among different people, if group work","M"],["Make a checklist with deadlines","T"]]],
+      ["How would you rate your problem solving skills?", [["High",null],["Medium",null],["Low",null]]],
+      ["What article would you read first?", [["How everyday chemicals affect your health","E"],["How DNA is used to track diseases","M"],["How artificial intelligence is changing the world","T"]]],
+      ["Which biological process interests you the most?", [["How toxins affect cells","E"],["How genes are passed down and expressed","R"],["How the body heals and fights infection","M"]]],
+      ["What subject would you choose to research?", [["Using genetic data to predict disease","M"],["The effects of pollution on living things","E"],["Ways to improve human life using organisms","T"]]],
+      ["What minor would you choose?", [["Biology","R"],["Computer science","T"],["Mathematics","T"]]],
+      ["What professional would you choose to shadow?", [["Toxicologist","E"],["Lab technician","H"],["Computational biologist","R"],["Data scientist","T"]]],
+      ["What environmental project intrigues you the most?", [["Testing local water for contaminants","H"],["Tracking evolution in species using DNA","R"],["Studying how pollution affects health","M"]]],
+      ["Which workplace benefit fits your liking the best?", [["Access to lab equipment","H"],["Access to large biological datasets","R"],["Remote work with computers","M"]]],
+      ["Which type of schedule would you prefer?", [["Regular morning lab hours","H"],["Shifts, including weekends","M"],["Flexible schedules built around projects","T"]]],
+      ["What kind of supervisor would you work best with?", [["One who provides detailed procedures","H"],["One who is supportive and team oriented","M"],["One who mentors and actively collaborates","R"],["One who is hands-off","T"]]],
+      ["Which professional activity would you choose?", [["Lab technique workshop","H"],["Volunteering at a health fair","M"],["Bioinformatics workshop","R"],["A hackathon","T"]]],
+      ["How comfortable are you with handling biological samples such as blood or tissue?", [["Comfortable only in a lab setting","H"],["Comfortable only in a healthcare setting","M"],["Comfortable in both settings",null],["None of the above","T"]]],
+      ["Which of the following skills would you like to build upon the most?", [["Laboratory skills","H"],["Coding","T"],["Communication","M"]]],
+      ["Which of the following projects would you choose?", [["Community health project","M"],["An analysis of a genetic dataset","R"],["Building an AI","T"]]],
+      ["Which type of math do you prefer?", [["Medicine dosage","M"],["Statistics and probability","R"],["Linear algebra","T"]]],
+      ["Where do you see yourself in 5 years?", [["Working in a laboratory","H"],["Caring for patients","M"],["In graduate school","R"],["Developing new technologies","T"]]],
+      ["What is something you could confidently teach others?", [["Lab techniques and safety","H"],["Healthy habits","M"],["How genes and data are similar","R"],["Coding competition","T"]]],
+      ["Which competition would you enter?", [["Biotechnology design","T"],["Genetics or bioinformatics","R"],["Coding or data science","T"]]],
+      ["What responsibility sounds the most rewarding to you?", [["Assuring the accuracy of lab results","H"],["Taking care of others","M"],["Finding meaning in genetic code","R"]]],
+      ["Out of these options, where would you want to intern?", [["A research lab","R"],["Healthcare office","M"],["Technology company","T"]]],
+      ["What would you do with a free afternoon?", [["Try an at-home science experiment","H"],["Build a small program/app","T"],["Volunteer at a clinic","M"]]],
+      ["Which tool would you want to master?", [["A micropipette","H"],["Software","T"],["A stethoscope","M"]]],
+      ["Which achievement would make you the proudest?", [["Finding a harmful chemical before it hurts someone","E"],["Identifying a gene linked to a disease","R"],["Creating software used by millions","T"]]]
+    ];
+
+    // Max possible points per category = number of questions where it appears as an option
+    const MAX = { T:0, R:0, H:0, M:0, E:0 };
+    Q.forEach(q => new Set(q[1].map(o => o[1]).filter(Boolean)).forEach(c => MAX[c]++));
+
+    let current = 0;
+    const answers = new Array(Q.length).fill(null); // chosen option index per question
+
+    const $ = id => document.getElementById(id);
+
+    function render() {
+      const [text, opts] = Q[current];
+      $("qTag").textContent = "QUESTION " + (current + 1);
+      $("qText").textContent = text;
+      $("progressText").textContent = "QUESTION " + (current + 1) + " OF " + Q.length;
+      const pct = Math.round((current / Q.length) * 100);
+      $("progressPct").textContent = pct + "%";
+      $("progressFill").style.width = pct + "%";
+      $("backBtn").disabled = current === 0;
+
+      const box = $("options");
+      box.innerHTML = "";
+      opts.forEach((o, i) => {
+        const b = document.createElement("button");
+        b.className = "opt" + (answers[current] === i ? " selected" : "");
+        b.textContent = o[0];
+        b.onclick = () => choose(i);
+        box.appendChild(b);
+      });
+    }
+
+    function choose(i) {
+      answers[current] = i;
+      document.querySelectorAll(".opt").forEach((el, idx) => el.classList.toggle("selected", idx === i));
+      setTimeout(() => {
+        if (current < Q.length - 1) { current++; render(); }
+        else showResults();
+      }, 250);
+    }
+
+    function showResults() {
+      const score = { T:0, R:0, H:0, M:0, E:0 };
+      answers.forEach((a, qi) => {
+        const cat = Q[qi][1][a][1];
+        if (cat) score[cat]++;
+      });
+      // Normalize so categories that appear in fewer questions (e.g. Environmental) are treated fairly
+      const ranked = Object.keys(score)
+        .map(c => ({ c, pct: Math.round((score[c] / MAX[c]) * 100) }))
+        .sort((a, b) => b.pct - a.pct);
+
+      const top = CATS[ranked[0].c], second = CATS[ranked[1].c];
+      $("resTitle").textContent = top.title;
+      $("resDesc").textContent = top.desc;
+      $("resCareers").innerHTML = "<li><strong>Careers to explore:</strong></li>" + top.careers.map(c => "<li>" + c + "</li>").join("");
+      $("resSecond").textContent = "Runner-up: " + second.title + ". Consider paths that blend both.";
+      $("resBars").innerHTML = ranked.map((r, i) =>
+        '<div class="rank-row' + (i === 0 ? " top" : "") + '"><div class="rank-label"><span>' + CATS[r.c].name.toUpperCase() +
+        '</span><span>' + r.pct + '%</span></div><div class="rank-bar"><div style="width:' + r.pct + '%"></div></div></div>').join("");
+
+      $("quiz").classList.add("hidden");
+      $("results").classList.remove("hidden");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    $("backBtn").onclick = () => { if (current > 0) { current--; render(); } };
+    $("retakeBtn").onclick = () => {
+      answers.fill(null); current = 0;
+      $("results").classList.add("hidden");
+      $("quiz").classList.remove("hidden");
+      render();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+
+    render();
+  </script>
+</body>
+</html>
