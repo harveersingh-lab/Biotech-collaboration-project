@@ -1,249 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sciderizer | Empowering Future STEM Leaders</title>
-  <link rel="stylesheet" href="style.css" />
-  <!-- Google Fonts: Space Grotesk (Bold Barebells style headers) + Plus Jakarta Sans -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sciderizer | Empowering Future STEM Leaders</title>
+<link rel="stylesheet" href="style.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- Barebells Style Announcement Marquee Ticker -->
+<!-- Fixed Header Container -->
+<div class="fixed-header-wrapper">
+  <!-- Top Marquee Ticker -->
   <div class="ticker-bar">
     <div class="ticker-track">
-      <span>NO CONFUSION • 100% STEM TALENT • CAREER READY • UNLOCK YOUR POTENTIAL • SCIDERIZER BIO • </span>
-      <span>NO CONFUSION • 100% STEM TALENT • CAREER READY • UNLOCK YOUR POTENTIAL • SCIDERIZER BIO • </span>
+      <span>NO CONFUSION &bull; 100% STEM TALENT &bull; CAREER READY &bull; UNLOCK YOUR POTENTIAL &bull; SCIDERIZER BIO </span>
+      <span>NO CONFUSION &bull; 100% STEM TALENT &bull; CAREER READY &bull; UNLOCK YOUR POTENTIAL &bull; SCIDERIZER BIO </span>
     </div>
   </div>
 
   <!-- Navigation Bar -->
   <header class="navbar">
-    <div class="logo">
-      <div class="logo-badge">BIO</div>
-      <span>SCIDERIZER</span>
-    </div>
-    <nav>
-      <a href="index.html">Home</a>
+    <a href="home.html" class="logo-link">
+      <div class="logo-wrapper">
+        <svg class="sciderizer-logo-svg" viewBox="0 0 320 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M 12 60 L 28 35 C 30 31 35 30 38 33 L 42 66 L 18 72 Z" fill="#0284c7" stroke="#1e3a8a" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M 38 36 C 42 34 50 32 60 38 C 72 45 80 40 85 40 C 89 40 92 45 90 50 C 86 60 72 68 56 68 C 46 68 40 65 38 60 Z" fill="#ffffff" stroke="#1e3a8a" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M 50 48 C 58 53 68 52 74 46" stroke="#0284c7" stroke-width="2.5" stroke-linecap="round"/>
+          <ellipse cx="64" cy="22" rx="16" ry="6" stroke="#10b981" stroke-width="2" transform="rotate(-15 64 22)"/>
+          <ellipse cx="64" cy="22" rx="16" ry="6" stroke="#38bdf8" stroke-width="2" transform="rotate(45 64 22)"/>
+          <circle cx="64" cy="22" r="4.5" fill="#10b981"/>
+          <text x="100" y="48" font-family="'Space Grotesk', sans-serif" font-weight="800" font-size="30" fill="#1e3a8a" letter-spacing="-0.5">Sciderizer</text>
+          <path d="M 102 56 L 245 56" stroke="#10b981" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="250" cy="56" r="2.5" fill="#38bdf8"/>
+        </svg>
+      </div>
+    </a>
+    <nav class="nav-links">
+      <a href="home.html" class="active">Home</a>
       <a href="about.html">About the Site</a>
-      <a href="#about">The Mission</a>
-      <a href="#questions">High School Stress</a>
-      <a href="#interactive">Talent Finder</a>
-      <a href="#interactive" class="btn-nav">Get Started</a>
+      <a href="recommendations.html">Recommended Programs</a>
+      <a href="test.html">Take The Test</a>
+      <a href="test.html" class="btn-nav">Get Started</a>
     </nav>
   </header>
+</div>
 
-  <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="hero-content">
-      <div class="pill-badge">✨ CAREER CHOICE FOR STUDENTS</div>
-      
-      <h1 class="hero-title">
-        "When I grow up, I want to be..."
-      </h1>
-      <p class="hero-subtitle">is a more stressful statement than some would think.</p>
-
-      <div class="hero-cta-group">
-        <a href="#about" class="btn btn-primary">Discover Sciderizer</a>
-        <a href="#interactive" class="btn btn-secondary">Find Your Pathway</a>
-      </div>
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="hero-content">
+    <div class="pill-badge">CAREER CHOICE FOR STUDENTS</div>
+    <h1 class="hero-title">"When I grow up, I want to be..."</h1>
+    <p class="hero-subtitle">is a more stressful statement than some would think.</p>
+    <div class="hero-cta-group">
+      <a href="#about" class="btn btn-primary">Discover Sciderizer</a>
+      <a href="test.html" class="btn btn-secondary">Take The Test</a>
     </div>
-
-    <!-- Floating Interactive Visual Cards -->
-    <div class="floating-cards-container">
-      <div class="float-card card-left">
-        <div class="float-icon">🧬</div>
-        <div>
-          <h4>100% Talent Match</h4>
-          <p>Every student has potential</p>
-        </div>
-      </div>
-      <div class="float-card card-right">
-        <div class="float-icon">🚀</div>
-        <div>
-          <h4>STEM Focused</h4>
-          <p>Built for future scientists</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Barebells Banner Divider -->
-  <div class="highlight-banner">
-    <h2>HIGH SCHOOL STUDENTS FEEL THE PRESSURE OF CAREER-HUNTING MORE THAN MOST.</h2>
   </div>
 
-  <!-- Main Mission Section -->
-  <section id="about" class="mission-section">
-    <div class="container">
-      <div class="mission-grid">
-        
-        <!-- Left: Statement Card -->
-        <div class="card-box main-card">
-          <span class="card-tag">THE PROBLEM</span>
-          <h3>Formative Years, High Pressure</h3>
-          <p>This is a formative point in high schoolers' lives when they start narrowing down their interests and learning how to use them to make and achieve real goals.</p>
-          
-          <div class="interactive-questions">
-            <button class="q-toggle" onclick="toggleAnswer(this)">
-              <span>What if they don't know where to start?</span>
-              <span class="plus">+</span>
-            </button>
-            <div class="q-answer">Sciderizer breaks down overwhelming STEM fields into bite-sized, actionable milestones designed specifically for high school students.</div>
+  <!-- Floating Visual Cards -->
+  <div class="floating-cards-container">
+    <div class="float-card card-left">
+      <div class="float-icon">🧬</div>
+      <div>
+        <h4>100% Talent Match</h4>
+        <p>Every student has potential</p>
+      </div>
+    </div>
+    <div class="float-card card-right">
+      <div class="float-icon">🔬</div>
+      <div>
+        <h4>STEM Focused</h4>
+        <p>Built for future scientists</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-            <button class="q-toggle" onclick="toggleAnswer(this)">
-              <span>What if they don't have a plan for what they want to be?</span>
-              <span class="plus">+</span>
-            </button>
-            <div class="q-answer">Our platform lets students explore career options dynamically without committing blindly before discovering their passion.</div>
+<!-- Banner Divider -->
+<div class="highlight-banner">
+  <h2>HIGH SCHOOL STUDENTS FEEL THE PRESSURE OF CAREER-HUNTING MORE THAN MOST.</h2>
+</div>
 
-            <button class="q-toggle" onclick="toggleAnswer(this)">
-              <span>What if they don't know how to use their talents in the workforce?</span>
-              <span class="plus">+</span>
-            </button>
-            <div class="q-answer">We map natural problem-solving tendencies to real-world industrial and biological workforce applications.</div>
-
-            <button class="q-toggle" onclick="toggleAnswer(this)">
-              <span>What if they don't know what they need to get where they want to be?</span>
-              <span class="plus">+</span>
-            </button>
-            <div class="q-answer">Sciderizer outlines clear step-by-step pathways including coursework, skill-building, and entry points.</div>
-          </div>
-        </div>
-
-        <!-- Right: Sciderizer Solution Card with Barebells Style Interactive Pop -->
-        <div class="card-box solution-card">
-          <span class="card-tag green-tag">THE SOLUTION</span>
-          <h2>That's where <br/><span class="text-highlight">Sciderizer</span> comes in.</h2>
-          
-          <p class="card-desc">
-            Sciderizer lets the power of career choice stay in the hands of the student while making it more manageable for them.
-          </p>
-
-          <!-- Interactive Expand Button -->
-          <button id="readMoreBtn" class="barebells-btn">
-            <span id="btnText">[more]</span>
-            <span class="arrow-icon">↓</span>
+<!-- Mission Section -->
+<section id="about" class="mission-section">
+  <div class="container">
+    <div class="mission-grid">
+      <div class="card-box main-card">
+        <span class="card-tag">THE PROBLEM</span>
+        <h3>Formative Years, High Pressure</h3>
+        <p>This is a formative point in high schoolers' lives when they start narrowing down their interests and learning how to use them to make and achieve real goals.</p>
+        <div class="interactive-questions">
+          <button class="q-toggle" onclick="toggleAnswer(this)">
+            <span>What if they don't know where to start?</span>
+            <span class="plus">+</span>
           </button>
+          <div class="q-answer">Sciderizer breaks down overwhelming STEM fields into bite-sized, actionable milestones designed specifically for high school students.</div>
 
-          <!-- Hidden Expandable Text -->
-          <div id="expandedText" class="expandable-box">
-            <div class="inner-quote">
-              <p>"The minds behind Sciderizer believe that every student in science, no matter how lost or confused, have the potential to advance science. Every student in STEM has a useful talent--they might just need to know where to put it."</p>
-            </div>
+          <button class="q-toggle" onclick="toggleAnswer(this)">
+            <span>What if they don't have a plan for what they want to be?</span>
+            <span class="plus">+</span>
+          </button>
+          <div class="q-answer">Our platform lets students explore career options dynamically without committing blindly before discovering their passion.</div>
+
+          <button class="q-toggle" onclick="toggleAnswer(this)">
+            <span>What if they don't know how to use their talents in the workforce?</span>
+            <span class="plus">+</span>
+          </button>
+          <div class="q-answer">We map natural problem-solving tendencies to real-world industrial and biological workforce applications.</div>
+
+          <button class="q-toggle" onclick="toggleAnswer(this)">
+            <span>What if they don't know what they need to get where they want to be?</span>
+            <span class="plus">+</span>
+          </button>
+          <div class="q-answer">Sciderizer outlines clear step-by-step pathways including coursework, skill-building, and entry points.</div>
+        </div>
+      </div>
+
+      <div class="card-box solution-card">
+        <span class="card-tag green-tag">THE SOLUTION</span>
+        <h2>That's where <br/><span class="text-highlight">Sciderizer</span> comes in.</h2>
+        <p class="card-desc">
+          Sciderizer lets the power of career choice stay in the hands of the student while making it more manageable for them.
+        </p>
+
+        <button id="readMoreBtn" class="barebells-btn">
+          <span id="btnText">[more]</span>
+          <span class="arrow-icon">&#9660;</span>
+        </button>
+
+        <div id="expandedText" class="expandable-box">
+          <div class="inner-quote">
+            <p>"The minds behind Sciderizer believe that every student in science, no matter how lost or confused, have the potential to advance science. Every student in STEM has a useful talent--they might just need to know where to put it."</p>
           </div>
         </div>
-
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Interactive STEM Skill Finder Section -->
-  <section id="interactive" class="interactive-section">
-    <div class="container">
-      <div class="section-title-wrap">
-        <span class="pill-badge">INTERACTIVE EXPLORER</span>
-        <h2>WHERE DOES YOUR TALENT BELONG?</h2>
-        <p>Click a superpower to discover your STEM career fit</p>
-      </div>
-
-      <div class="interactive-cards">
-        <div class="bio-card" onclick="selectPathway('analyzer', this)">
-          <div class="card-badge-top">LOGIC & DATA</div>
-          <div class="bio-icon">🔬</div>
-          <h3>The Analytical Mind</h3>
-          <p>You love untangling complex puzzles, patterns, and computational problems.</p>
-          <div class="card-hover-action">SELECT PATHWAY &rarr;</div>
-        </div>
-
-        <div class="bio-card" onclick="selectPathway('creator', this)">
-          <div class="card-badge-top">INNOVATION & TECH</div>
-          <div class="bio-icon">⚙️</div>
-          <h3>The Bio-Engineer</h3>
-          <p>You enjoy creating physical systems, lab tools, and hands-on experiments.</p>
-          <div class="card-hover-action">SELECT PATHWAY &rarr;</div>
-        </div>
-
-        <div class="bio-card" onclick="selectPathway('defender', this)">
-          <div class="card-badge-top">LIFE & ENVIRONMENT</div>
-          <div class="bio-icon">🌱</div>
-          <h3>The Earth Defender</h3>
-          <p>You are passionate about living systems, nature, healthcare, and biology.</p>
-          <div class="card-hover-action">SELECT PATHWAY &rarr;</div>
-        </div>
-      </div>
-
-      <!-- Result Panel -->
-      <div id="pathwayResult" class="result-panel hidden">
-        <div class="result-badge">TALENT MATCH FOUND</div>
-        <h3 id="resultTitle">Pathway Title</h3>
-        <p id="resultDesc">Pathway description goes here...</p>
-      </div>
+<!-- Direct CTA Section -->
+<section id="test-section" class="test-portal-section">
+  <div class="container">
+    <div class="test-card-frame">
+      <div class="test-subheading">Students,</div>
+      <h2 class="test-main-title">Take the Test!</h2>
+      <p class="test-description">FIND YOUR CAREER-BEST-FIT</p>
+      <a href="test.html" class="test-start-btn">TAKE THE TEST &rarr;</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2026 SCIDERIZER. Empowering the next generation of scientific minds.</p>
-    </div>
-  </footer>
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2026 SCIDERIZER. Empowering the next generation of scientific minds.</p>
+  </div>
+</footer>
 
-  <script>
-    // Expandable Read More functionality
-    const readMoreBtn = document.getElementById('readMoreBtn');
-    const expandedText = document.getElementById('expandedText');
-    const btnText = document.getElementById('btnText');
+<script>
+  const readMoreBtn = document.getElementById('readMoreBtn');
+  const expandedText = document.getElementById('expandedText');
+  const btnText = document.getElementById('btnText');
 
+  if(readMoreBtn) {
     readMoreBtn.addEventListener('click', () => {
       expandedText.classList.toggle('active');
       readMoreBtn.classList.toggle('active');
-      
       if (expandedText.classList.contains('active')) {
         btnText.textContent = '[show less]';
       } else {
         btnText.textContent = '[more]';
       }
     });
+  }
 
-    // Accordion Toggle Function
-    function toggleAnswer(element) {
-      const answer = element.nextElementSibling;
-      element.classList.toggle('open');
-      if (answer.style.maxHeight) {
-        answer.style.maxHeight = null;
-        element.querySelector('.plus').textContent = '+';
-      } else {
-        answer.style.maxHeight = answer.scrollHeight + "px";
-        element.querySelector('.plus').textContent = '−';
-      }
+  function toggleAnswer(element) {
+    const answer = element.nextElementSibling;
+    element.classList.toggle('open');
+    if (answer.style.maxHeight) {
+      answer.style.maxHeight = null;
+      element.querySelector('.plus').textContent = '+';
+    } else {
+      answer.style.maxHeight = answer.scrollHeight + "px";
+      element.querySelector('.plus').textContent = '-';
     }
-
-    // Interactive Pathway Selector
-    function selectPathway(type, element) {
-      document.querySelectorAll('.bio-card').forEach(card => card.classList.remove('active'));
-      element.classList.add('active');
-
-      const resultBox = document.getElementById('pathwayResult');
-      const resultTitle = document.getElementById('resultTitle');
-      const resultDesc = document.getElementById('resultDesc');
-
-      resultBox.classList.remove('hidden');
-
-      if(type === 'analyzer') {
-        resultTitle.textContent = 'Data Science, Bioinformatics & Molecular Genetics';
-        resultDesc.textContent = 'Your analytical brain is made for parsing raw data, genetic coding, and computational biology. Sciderizer helps you direct this precision into major research labs!';
-      } else if(type === 'creator') {
-        resultTitle.textContent = 'Biomedical Engineering, Robotics & Nanotech';
-        resultDesc.textContent = 'Your creative mechanics fit directly into cutting-edge laboratory hardware development and artificial limb/organ tech.';
-      } else if(type === 'defender') {
-        resultTitle.textContent = 'Environmental Biotechnology, Conservation & AgTech';
-        resultDesc.textContent = 'Your protective instinct for living organisms drives crucial solutions in eco-restoration, climate bioscience, and sustainable crops.';
-      }
-    }
-  </script>
+  }
+</script>
 </body>
 </html>
