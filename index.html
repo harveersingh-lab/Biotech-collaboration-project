@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Sciderizer | Empowering Future STEM Leaders</title>
-<link rel="stylesheet" href="style.css" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sciderizer | Empowering Future STEM Leaders</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
 
 <!-- Fixed Header Container -->
 <div class="fixed-header-wrapper">
@@ -20,10 +21,9 @@
       <span>NO CONFUSION &bull; 100% STEM TALENT &bull; CAREER READY &bull; UNLOCK YOUR POTENTIAL &bull; SCIDERIZER BIO </span>
     </div>
   </div>
-
   <!-- Navigation Bar -->
   <header class="navbar">
-    <a href="home.html" class="logo-link">
+    <a href="index.html" class="logo-link">
       <div class="logo-wrapper">
         <svg class="sciderizer-logo-svg" viewBox="0 0 320 90" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M 12 60 L 28 35 C 30 31 35 30 38 33 L 42 66 L 18 72 Z" fill="#0284c7" stroke="#1e3a8a" stroke-width="2.5" stroke-linejoin="round"/>
@@ -39,11 +39,9 @@
       </div>
     </a>
     <nav class="nav-links">
-      <a href="home.html" class="active">Home</a>
-      <a href="about.html">About the Site</a>
-      <a href="recommendations.html">Recommended Programs</a>
-      <a href="test.html">Take The Test</a>
-      <a href="test.html" class="btn-nav">Get Started</a>
+      <a href="index.html" class="active nav-item">Home</a>
+      <a href="about.html" class="nav-item">About</a>
+      <a href="test.html" class="btn-nav nav-item">Take the Test!</a>
     </nav>
   </header>
 </div>
@@ -59,18 +57,17 @@
       <a href="test.html" class="btn btn-secondary">Take The Test</a>
     </div>
   </div>
-
   <!-- Floating Visual Cards -->
   <div class="floating-cards-container">
     <div class="float-card card-left">
-      <div class="float-icon">🧬</div>
+      <div class="float-icon">💡</div>
       <div>
         <h4>100% Talent Match</h4>
         <p>Every student has potential</p>
       </div>
     </div>
     <div class="float-card card-right">
-      <div class="float-icon">🔬</div>
+      <div class="float-icon">🧬</div>
       <div>
         <h4>STEM Focused</h4>
         <p>Built for future scientists</p>
@@ -98,19 +95,16 @@
             <span class="plus">+</span>
           </button>
           <div class="q-answer">Sciderizer breaks down overwhelming STEM fields into bite-sized, actionable milestones designed specifically for high school students.</div>
-
           <button class="q-toggle" onclick="toggleAnswer(this)">
             <span>What if they don't have a plan for what they want to be?</span>
             <span class="plus">+</span>
           </button>
           <div class="q-answer">Our platform lets students explore career options dynamically without committing blindly before discovering their passion.</div>
-
           <button class="q-toggle" onclick="toggleAnswer(this)">
             <span>What if they don't know how to use their talents in the workforce?</span>
             <span class="plus">+</span>
           </button>
           <div class="q-answer">We map natural problem-solving tendencies to real-world industrial and biological workforce applications.</div>
-
           <button class="q-toggle" onclick="toggleAnswer(this)">
             <span>What if they don't know what they need to get where they want to be?</span>
             <span class="plus">+</span>
@@ -118,19 +112,16 @@
           <div class="q-answer">Sciderizer outlines clear step-by-step pathways including coursework, skill-building, and entry points.</div>
         </div>
       </div>
-
       <div class="card-box solution-card">
         <span class="card-tag green-tag">THE SOLUTION</span>
         <h2>That's where <br/><span class="text-highlight">Sciderizer</span> comes in.</h2>
         <p class="card-desc">
           Sciderizer lets the power of career choice stay in the hands of the student while making it more manageable for them.
         </p>
-
         <button id="readMoreBtn" class="barebells-btn">
           <span id="btnText">[more]</span>
           <span class="arrow-icon">&#9660;</span>
         </button>
-
         <div id="expandedText" class="expandable-box">
           <div class="inner-quote">
             <p>"The minds behind Sciderizer believe that every student in science, no matter how lost or confused, have the potential to advance science. Every student in STEM has a useful talent--they might just need to know where to put it."</p>
@@ -160,12 +151,13 @@
   </div>
 </footer>
 
+<script src="sound.js"></script>
 <script>
   const readMoreBtn = document.getElementById('readMoreBtn');
   const expandedText = document.getElementById('expandedText');
   const btnText = document.getElementById('btnText');
 
-  if(readMoreBtn) {
+  if (readMoreBtn) {
     readMoreBtn.addEventListener('click', () => {
       expandedText.classList.toggle('active');
       readMoreBtn.classList.toggle('active');

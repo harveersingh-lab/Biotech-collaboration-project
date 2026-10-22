@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>About the Site | SCIDERIZER</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | SCIDERIZER</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+<!-- Hidden Audio Player for Lo-Fi Music -->
+<iframe class="audio-bg" src="https://www.youtube.com/embed/6H-PLF2CR18?autoplay=1&loop=1&playlist=6H-PLF2CR18&controls=0" allow="autoplay"></iframe>
 
 <!-- Fixed Header Container -->
 <div class="fixed-header-wrapper">
@@ -20,14 +23,13 @@
       <span>NO CONFUSION &bull; 100% STEM TALENT &bull; CAREER READY &bull; UNLOCK YOUR POTENTIAL &bull; SCIDERIZER BIO </span>
     </div>
   </div>
-
   <!-- Header Navigation Bar -->
   <header class="navbar">
-    <a href="home.html" class="logo-link">
+    <a href="index.html" class="logo-link">
       <div class="logo-wrapper">
         <svg class="sciderizer-logo-svg" viewBox="0 0 320 90" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M 12 60 L 28 35 C 30 31 35 30 38 33 L 42 66 L 18 72 Z" fill="#0284c7" stroke="#1e3a8a" stroke-width="2.5" stroke-linejoin="round"/>
-          <path d="M 38 36 C 42 34 50 32 60 38 C 72 45 80 40 85 40 C 89 40 92 45 90 50 C 86 60 72 68 56 68 C 46 68 40 65 38 60 Z" fill="#ffffff" stroke="#1e3a8a" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M 38 36 C 42 34 50 32 60 38 C 72 45 80 40 85 40 C 89 40 92 45 90 50 C 86 60 72 68 56 68 C 46 68 40 65 38 60 Z" fill="#ffffff" stroke="#1e3a8a" stroke-width="3" stroke-linejoin="round" />
           <path d="M 50 48 C 58 53 68 52 74 46" stroke="#0284c7" stroke-width="2.5" stroke-linecap="round"/>
           <ellipse cx="64" cy="22" rx="16" ry="6" stroke="#10b981" stroke-width="2" transform="rotate(-15 64 22)"/>
           <ellipse cx="64" cy="22" rx="16" ry="6" stroke="#38bdf8" stroke-width="2" transform="rotate(45 64 22)"/>
@@ -39,11 +41,9 @@
       </div>
     </a>
     <nav class="nav-links">
-      <a href="home.html">Home</a>
-      <a href="about.html" class="active">About the Site</a>
-      <a href="recommendations.html">Recommended Programs</a>
-      <a href="test.html">Take The Test</a>
-      <a href="#signup-section" class="btn-nav">Get Started</a>
+      <a href="index.html" class="nav-item">Home</a>
+      <a href="about.html" class="active nav-item">About</a>
+      <a href="test.html" class="btn-nav nav-item">Take the Test!</a>
     </nav>
   </header>
 </div>
@@ -73,13 +73,11 @@
           Finding the right career path is no easy task, especially not for high schoolers. Much less for high schoolers in science. Often times, these students struggle to decide on a path to walk for their career for any number of limitations. Maybe they know what they want but are unsure how to get there. Maybe they know the field they're passionate about but unsure about the options within it. Maybe they're completely lost.
         </p>
       </article>
-
       <article class="content-card highlight-card">
         <p class="card-text bold-text">
           Sciderizer understands that. And the leaders behind it want to help.
         </p>
       </article>
-
       <article class="content-card">
         <p class="card-text">
           The leaders behind the site were in the same situation once before, and worked to find a way to help lost students find their way. These leaders and their partners worked to create Sciderizer, a tool that narrows down the interests, strengths, and weaknesses of students in STEM. As Steve Jobs implied, connecting these dots from one's past is a crucial step in understanding your career path. Sciderizer provides insight on its user's future in science, acting as a first step for them in setting and achieving their goals.
@@ -91,7 +89,7 @@
     <div class="graphics-container">
       <p class="section-lead">
         Through a personalized test, the student can get an idea for their future, and it all starts with....
-        <br />... a sign-up screen.
+        <br /> ... a sign-up screen.
       </p>
       <div class="graphics-row">
         <div class="graphic-item">
@@ -103,7 +101,7 @@
         <div class="graphic-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
-            <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/>
+            <path d="M6 12v5c0 2 2 1 6 1s6-1 6-3v-5"/>
           </svg>
         </div>
         <div class="graphic-item">
@@ -127,9 +125,7 @@
         </svg>
         Continue with Google
       </button>
-
       <div class="divider"><span>or sign up with email</span></div>
-
       <form id="studentAuthForm" class="auth-form" onsubmit="handleFormSubmit(event)">
         <div class="form-group">
           <label for="studentName">Full Name</label>
@@ -147,7 +143,6 @@
           Complete Sign Up & Continue &rarr;
         </button>
       </form>
-
       <div id="authSuccessMessage" class="auth-success-message hidden">
         <div class="success-icon">&check;</div>
         <h3>Welcome, <span id="welcomeUserName">Student</span>!</h3>
@@ -162,6 +157,7 @@
   <p>&copy; 2026 SCIDERIZER. All Rights Reserved.</p>
 </footer>
 
+<script src="sound.js"></script>
 <script>
   function handleFormSubmit(event) {
     event.preventDefault();
@@ -174,14 +170,14 @@
   }
 
   function showSuccess(name) {
-    document.querySelector('.google-btn').style.display = 'none';
+    document.querySelector('.google-btn').style.display = "none";
     document.querySelector('.divider').style.display = 'none';
     document.getElementById('studentAuthForm').style.display = 'none';
     const successMsg = document.getElementById('authSuccessMessage');
     document.getElementById('welcomeUserName').textContent = name;
     successMsg.classList.remove('hidden');
     setTimeout(() => {
-      window.location.href = 'home.html';
+      window.location.href = 'index.html';
     }, 2000);
   }
 </script>
