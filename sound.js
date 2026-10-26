@@ -187,3 +187,20 @@ class PersistentAudioSystem {
   }
   
   const audioEngine = new PersistentAudioSystem();
+
+// Responsive header offset: the fixed header changes height on small screens
+// (the nav can wrap), so measure it and give the page matching top padding.
+(function () {
+  function setHeaderOffset() {
+    var h = document.querySelector('.fixed-header-wrapper');
+    if (h) document.documentElement.style.setProperty('--header-h', h.offsetHeight + 'px');
+  }
+  document.addEventListener('DOMContentLoaded', function () {
+    setHeaderOffset();
+    var h = document.querySelector('.fixed-header-wrapper');
+    if (h && 'ResizeObserver' in window) new ResizeObserver(setHeaderOffset).observe(h);
+  });
+  window.addEventListener('load', setHeaderOffset);
+  window.addEventListener('resize', setHeaderOffset);
+  window.addEventListener('orientationchange', setHeaderOffset);
+})();
