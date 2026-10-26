@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Career Test | Sciderizer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Hidden Audio Player for Lo-Fi Music -->
+<iframe class="audio-bg" src="https://www.youtube.com/embed/6H-PLF2CR18?autoplay=1&loop=1&playlist=6H-PLF2CR18&controls=0" allow="autoplay"></iframe>
+
+<!-- Fixed Header Container -->
+<div class="fixed-header-wrapper">
+  <!-- Ticker Bar -->
+  <div class="ticker-bar">
+    <div class="ticker-track">
+      <span>NO CONFUSION &bull; 100% STEM TALENT &bull; CAREER READY &bull; UNLOCK YOUR POTENTIAL &bull; SCIDERIZER BIO </span>
+      <span>NO CONFUSION &bull; 100% STEM TALENT &bull; CAREER READY &bull; UNLOCK YOUR POTENTIAL &bull; SCIDERIZER BIO </span>
+    </div>
+  </div>
+  <!-- Shared Header Navigation Bar -->
+  <header class="navbar">
+    <a href="index.html" class="logo-link">
+      <div class="logo-wrapper">
+        <svg class="sciderizer-logo-svg" viewBox="0 0 320 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M 12 60 L 28 35 C 30 31 35 30 38 33 L 42 66 L 18 72 Z" fill="#0284c7" stroke="#1e3a8a" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M 38 36 C 42 34 50 32 60 38 C 72 45 80 40 85 40 C 89 40 92 45 90 50 C 86 60 72 68 56 68 C 46 68 40 65 38 60 Z" fill="#ffffff" stroke="#1e3a8a" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M 50 48 C 58 53 68 52 74 46" stroke="#0284c7" stroke-width="2.5" stroke-linecap="round"/>
+          <ellipse cx="64" cy="22" rx="16" ry="6" stroke="#10b981" stroke-width="2" transform="rotate(-15 64 22)"/>
+          <ellipse cx="64" cy="22" rx="16" ry="6" stroke="#38bdf8" stroke-width="2" transform="rotate(45 64 22)"/>
+          <circle cx="64" cy="22" r="4.5" fill="#10b981"/>
+          <text x="100" y="48" font-family="'Space Grotesk', sans-serif" font-weight="800" font-size="30" fill="#1e3a8a" letter-spacing="-0.5">Sciderizer</text>
+          <path d="M 102 56 L 245 56" stroke="#10b981" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="250" cy="56" r="2.5" fill="#38bdf8"/>
+        </svg>
+      </div>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html" class="nav-item">Home</a>
+      <a href="about.html" class="nav-item">About</a>
+      <a href="test.html" class="btn-nav nav-item active">Take the Test!</a>
+    </nav>
+  </header>
+</div>
+
+<!-- Test Hero -->
+<section class="test-hero">
+  <div class="pill-badge">CAREER TEST</div>
+  <h1>Which career works best for you?</h1>
+  <p>Answer each question for the most accurate result.</p>
+</section>
+
+<!-- Test Quiz Section -->
+<section class="test-section">
+  <div class="container">
+    <div class="test-wrap">
+      <!-- Quiz Frame -->
+      <div id="quiz">
+        <div class="progress-meta">
+          <span id="progressText">QUESTION 1 OF 46</span>
+          <span id="progressPct">0%</span>
+        </div>
+        <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+        <div class="card-box main-card">
+          <span class="card-tag" id="qTag">QUESTION 1</span>
+          <h3 class="question-text" id="qText">Loading question...</h3>
+          <div class="options" id="options"></div>
+          <div class="test-nav">
+            <button class="btn btn-back" id="backBtn">&larr; Back</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Results View -->
+      <div id="results" class="hidden">
+        <canvas id="confetti"></canvas>
+        <div class="card-box solution-card result-hero">
+          <span class="card-tag green-tag">TALENT MATCH FOUND</span>
+          <div class="match-emoji" id="resEmoji"></div>
+          <h2 id="resTitle">Best fit</h2>
+          <p class="match-sub" id="resArchetype"></p>
+          <p class="card-desc" id="resDesc"></p>
+        </div>
+        <div class="results-grid">
+          <div class="card-box chart-box">
+            <span class="card-tag">YOUR TALENT RADAR</span>
+            <div id="radar"></div>
+          </div>
+          <div class="card-box chart-box">
+            <span class="card-tag">YOUR PIE &bull; TAP A SLICE</span>
+            <div id="donut"></div>
+            <div class="legend" id="legend"></div>
+            <div class="pie-info" id="pieInfo"></div>
+          </div>
+        </div>
+        <div class="card-box">
+          <span class="card-tag">SCORE BREAKDOWN</span>
+          <div id="resBars"></div>
+        </div>
+        
+        <h3 class="rec-heading">What might be good for you</h3>
+        <div class="rec-grid" id="recGrid"></div>
+        
+        <div class="card-box solution-card">
+          <span class="card-tag green-tag">YOUR BEST BLEND</span>
+          <p class="card-desc" id="resSecond"></p>
+          <div class="chips" id="resChips"></div>
+        </div>
+
+        <div class="card-box solution-card rec-unlocked-card">
+          <span class="card-tag green-tag">RECOMMENDED FOR YOU</span>
+          <h3>Explore Curated STEM Programs</h3>
+          <p class="card-desc">Based on your results, view recommended programs, internships, and research opportunities.</p>
+          <div id="aiReasoning" style="margin-top: 15px; font-weight: 600; color: var(--color-blue-dark);"></div>
+          <a href="recommendations.html" class="test-start-btn" style="display:inline-block; margin-top:15px;">VIEW RECOMMENDED PROGRAMS &rarr;</a>
+        </div>
+
+        <div class="result-actions">
+          <button class="btn btn-primary" id="retakeBtn" style="border:none; cursor:pointer;">Retake the Test</button>
+          <a href="index.html" class="btn btn-secondary" style="color:var(--color-blue-dark); border-color:var(--color-blue-primary);">Back to Home</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2026 SCIDERIZER. Empowering the next generation of scientific minds.</p>
+  </div>
+</footer>
+
+<script src="sound.js"></script>
+<script>
+const CATS = {
+  T: { name: "Technical", title: "Technical & Computational Sciences", desc: "You think in systems, data, and design. You like building, improving, and automating things, and you tend to solve problems with tools and logic.", careers: ["Data Scientist ($120,230/yr)", "Computer & Information Research Scientist ($140,300/yr)", "Bioinformatics Developer", "Biomedical Engineer"] },
+  R: { name: "Research", title: "Research & Discovery", desc: "You're driven by learning, asking good questions, and checking your work carefully. Finding out how things really work is what motivates you.", careers: ["Clinical Laboratory Technologist ($62,930/yr)", "Chemical Technician ($60,390/yr)", "Genetics Researcher", "Molecular Biologist"] },
+  H: { name: "Hands On", title: "Hands-On Lab & Field Work", desc: "You do your best thinking while doing. Running the experiment, using the equipment, and working directly with samples is where you shine.", careers: ["Bioengineer / Biomedical Engineer ($109,370/yr)", "Biological Technician ($57,510/yr)", "Quality Control Analyst", "Lab Operations Specialist"] },
+  M: { name: "Medical", title: "Medical & Health Sciences", desc: "You're motivated by helping people. You care about health, communication, and seeing your work make a real difference for others.", careers: ["Toxicologist ($103,410/yr)", "Registered Nurse ($97,550/yr)", "Public Health Specialist", "Clinical Specialist"] },
+  E: { name: "Environmental", title: "Environmental & Life Systems", desc: "You're drawn to living systems, nature, and the effects of the world around us on life. You want your work to protect or improve ecosystems.", careers: ["Agricultural & Food Science Technician ($49,630-$52,130/yr)", "Conservation Scientist", "Ecology Specialist", "Sustainability Consultant"] }
+};
+
+const REC = {
+  T: { emoji:"💻", type: "The Builder & Problem-Solver", study: ["Data Science", "Computer Science", "Biomedical Engineering", "Bioinformatics"], classes: ["AP Computer Science", "AP Statistics", "Calculus", "Robotics / Engineering"], acts: ["Hackathons", "Coding or data science competitions", "Build a small lab-tool or app project"], skills: ["Python or R", "Data visualization", "Modeling & systems thinking"] },
+  R: { emoji:"🔬", type: "The Investigator", study: ["Biology", "Genetics", "Molecular Biology", "Biochemistry"], classes: ["AP Biology", "AP Chemistry", "Statistics", "Research or Science Fair"], acts: ["Science fair / research programs", "Genetics or bioinformatics competitions", "Shadow a university lab"], skills: ["Literature research", "Experimental design", "Scientific writing"] },
+  H: { emoji:"🧫", type: "The Experimenter", study: ["Biotechnology", "Clinical Lab Science", "Chemistry", "Biomedical Science"], classes: ["Chemistry", "Anatomy & Physiology", "Biotech / Lab Technique electives"], acts: ["Lab technique workshops", "Biotechnology design competitions", "Lab internships"], skills: ["Pipetting & lab technique", "Lab safety", "Careful data recording"] },
+  M: { emoji:"🩺", type: "The Healer & Helper", study: ["Pre-Med / Health Sciences", "Nursing", "Public Health", "Toxicology"], classes: ["Anatomy & Physiology", "Health Science / HOSA", "Psychology", "Biology"], acts: ["Volunteer at a clinic or health fair", "HOSA competitions", "Shadow a healthcare professional"], skills: ["Communication", "Empathy & teamwork", "Basic clinical knowledge"] },
+  E: { emoji:"🌱", type: "The Earth Defender", study: ["Environmental Science", "Ecology", "Environmental Biotechnology", "Conservation Biology"], classes: ["AP Environmental Science", "Biology", "Chemistry", "Geography / GIS"], acts: ["Water-testing or cleanup projects", "Citizen science programs", "Nature or conservation clubs"], skills: ["Field sampling", "Data collection", "Sustainability thinking"] }
+};
+
+const BLEND = {
+  ET: "Environmental data science, remote sensing, sustainable AgTech engineering",
+  ER: "Conservation genomics, ecology, evolutionary biology",
+  EH: "Water-quality testing, field research, environmental lab analysis",
+  EM: "Toxicology, environmental health, epidemiology",
+  HM: "Clinical laboratory science, medical technology, diagnostics",
+  HR: "Research lab technician, molecular biology lab work",
+  HT: "Biotech manufacturing, lab automation, instrumentation",
+  MR: "Medical research, genetic counseling, clinical trials",
+  MT: "Health informatics, medical devices, biomedical engineering",
+  RT: "Bioinformatics, computational biology, genomics data science"
+};
+
+const COLORS = { T:"#1e3a8a", R:"#0ea5e9", H:"#38bdf8", M:"#10b981", E:"#34d399" };
+const ORDER = ["T", "R", "H", "M", "E"];
+
+const Q = [
+  ["Which part of the Scientific Process are you best at when it comes to projects and planning?", [["The Observation and Questioning phases, when I find a problem and form my inquiries around it.", "T"], ["The Research and Hypothesis phases, when I get to learn about a topic and form a plan of action.", "R"], ["The Experimentation phase, when I get to actively participate in the experiment.", "H"]]],
+  ["Which of the following scenarios excites you the most?", [["Building an automatic card-shuffling machine", "T"], ["Creating an automatic plant-watering system", "E"], ["Creating a genetically enhanced crop", "E"]]],
+  ["When a procedure fails, what is your first course of action?", [["Review each step for error", "T"], ["Redesign the approach", "T"], ["Consult a colleague", "M"]]],
+  ["How do you prefer to receive instructions?", [["Written", "R"], ["Verbal", "M"], ["Visual", "T"]]],
+  ["Would you rather improve something that exists or build something new?", [["Improve existing technology", "T"], ["Create new technology", "T"]]],
+  ["How would you rate your effectiveness under pressure?", [["High", null], ["Medium", null], ["Low", null]]],
+  ["How do you approach problems with no clear solution?", [["By consulting others", "M"], ["Doing research on the issue", "R"]]],
+  ["How would you describe your ability to communicate complex information to others?", [["High", "T"], ["Medium", "R"], ["Low", "E"]]],
+  ["When a hypothesis fails, what is your first source of action?", [["Review the procedure, in an attempt to find the origin of the error", "R"], ["Ask an experienced colleague to review your work", "M"], ["Adjust a single variable and test again", "H"]]],
+  ["What keeps you motivated on a long term project?", [["Knowing the fruit of your labor will help others", "M"], ["Knowing that you are learning something meaningful", "R"]]],
+  ["Upon completing an assignment ahead of time, how do you typically use the remaining time?", [["Help a classmate who is struggling", "M"], ["Review my results for anything I may have missed", "R"], ["Find a way to work faster next time", "T"]]],
+  ["When a collaborator is not contributing equally, what is your approach?", [["Hand them very specific instructions", "H"], ["Check in to see if something is wrong", "M"], ["Set up a shared tracking system for progress", "T"]]],
+  ["Which form of recognition would you value the most?", [["Being known to be careful, and reliable", "R"], ["Being thanked for helping", "M"], ["Solving an issue, no one could solve", "T"]]],
+  ["Which best describes your time management?", [["Careful, and steady", "R"], ["Flexible, I adjust based on the circumstance", "T"], ["Unfocused, I struggle to do my work in an orderly fashion.", null]]],
+  ["In a student led activity role, which responsibility do you assume?", [["Scribe", "R"], ["Organizer", "T"], ["Experimenter", "H"]]],
+  ["When asked to revise your work, how would you approach it?", [["Re-examine methods", "R"], ["Ask for feedback from a colleague", "M"], ["Look for flaws in my logic", "T"]]],
+  ["How would you prepare for an exam?", [["Review the given material by the teacher", "R"], ["Go home and make a study guide for yourself", "T"], ["Study with a group", "M"]]],
+  ["When you are given unfamiliar lab equipment, what is your first approach?", [["Read the procedure and see what the instructions are", "R"], ["Ask an experienced individual to show you", "M"], ["Search using other methods", "T"]]],
+  ["How do you keep notes?", [["Detailed, organized, and concise", "R"], ["Short entries like bullet points of the important parts", "T"], ["Disorganized, and messy", null]]],
+  ["What is your first step when you are planning a project?", [["Designing the experiment", "T"], ["Researching the requirements/materials needed", "R"], ["Considering what organizations could assist in the development of the project", "M"]]],
+  ["How do you ensure your work is accurate?", [["Repeat the experiment to see if results vary", "H"], ["Compare it to existing data", "R"], ["Check each step for inaccuracies", "T"]]],
+  ["If a single method gives different results, what is your course of action?", [["Run the experiment again, but with a control group", "H"], ["Compare the results", "R"], ["Build a model and redo the experiment", "T"]]],
+  ["How would you go about breaking down a large assignment?", [["Divide the assignment into stages and complete them accordingly", "R"], ["Split the work amongst different people, if group work.", "M"], ["Make a checklist with deadlines", "T"]]],
+  ["How would you rate your problem solving skills?", [["High", null], ["Medium", null], ["Low", null]]],
+  ["What article would you read first?", [["How everyday chemicals affect your health", "E"], ["How DNA is used to track diseases", "M"], ["How artificial intelligence is changing the world", "T"]]],
+  ["Which biological process interests you the most?", [["How toxins affect cells", "E"], ["How genes are passed down and expressed", "R"], ["How the body heals and fights infection", "M"]]],
+  ["What subject would you choose to research?", [["Using genetic data to predict disease", "M"], ["The effects of pollution on living things", "E"], ["Ways to improve human life using organisms", "T"]]],
+  ["What minor would you choose?", [["Biology", "R"], ["Computer science", "T"], ["Mathematics", "T"]]],
+  ["What professional would you choose to shadow?", [["Toxicologist", "E"], ["Lab technician", "H"], ["Computational biologist", "R"], ["Data scientist", "T"]]],
+  ["What environmental project intrigues you the most?", [["Testing local water for contaminants", "H"], ["Tracking evolution in species using DNA", "R"], ["Studying how pollution affects health", "M"]]],
+  ["Which workplace benefit fits your liking the best?", [["Access to lab equipment", "H"], ["Access to large biological datasets", "R"], ["Remote work with computers", "M"]]],
+  ["Which type of schedule would you prefer?", [["Regular morning lab hours", "H"], ["Shifts, including weekends", "M"], ["Flexible schedules built around projects", "T"]]],
+  ["What kind of supervisor would you work best with?", [["One who provides detailed procedures", "H"], ["One who is supportive and team oriented", "M"], ["One who mentors and actively collaborates", "R"], ["One who is hands-off", "T"]]],
+  ["Which professional activity would you choose?", [["Lab technique workshop", "H"], ["Volunteering at a health fair", "M"], ["Bioinformatics workshop", "R"], ["A hackathon", "T"]]],
+  ["How comfortable are you with handling biological samples similar to blood or tissue?", [["Comfortable only in a lab setting", "H"], ["Comfortable only in a healthcare setting", "M"], ["Both A and B", null], ["None of the above", "T"]]],
+  ["Which of the following skills would you like to build upon the most?", [["Laboratory skills", "H"], ["Coding", "T"], ["Communication", "M"]]],
+  ["Which of the following projects would you choose?", [["Community health project", "M"], ["An analysis of a genetic dataset", "R"], ["Building an AI", "T"]]],
+  ["Which type of math do you prefer?", [["Medicine dosage", "M"], ["Statistics and probability", "R"], ["Linear algebra", "T"]]],
+  ["Where do you see yourself in 5 years?", [["Working in a laboratory", "H"], ["Caring for patients", "M"], ["In graduate school", "R"], ["Developing new technologies", "T"]]],
+  ["What is something you could confidently teach others?", [["Lab techniques and safety", "H"], ["Healthy habits", "M"], ["How genes and data are similar", "R"], ["Coding competition", "T"]]],
+  ["Which competition would you enter?", [["Biotechnology design", "T"], ["Genetics or bioinformatics", "R"], ["Coding or datascience", "T"]]],
+  ["What responsibility sounds the most rewarding to you?", [["Assuring the accuracy of lab results", "H"], ["Taking care of others", "M"], ["Finding meaning in genetic code", "R"]]],
+  ["Out of these options, where would you want to intern?", [["An research lab", "R"], ["Healthcare office", "M"], ["Technology company", "T"]]],
+  ["What would you do with a free afternoon?", [["Try an at home science experiment", "H"], ["Build a small program/app", "T"], ["Volunteering at a clinic", "M"]]],
+  ["Which tool would you want to master?", [["A micropipette", "H"], ["Software", "T"], ["stethoscope", "M"]]],
+  ["Which achievement would make you the proudest?", [["Finding a harmful chemical before it hurts someone", "E"], ["Identifying a gene linked to a disease", "R"], ["Creating a software used by millions", "T"]]]
+];
+
+const MAX = { T:0, R:0, H:0, M:0, E:0 };
+Q.forEach(q => new Set(q[1].map(o => o[1]).filter(Boolean)).forEach(c => MAX[c]++));
+
+let current = 0;
+const answers = new Array(Q.length).fill(null);
+const $ = id => document.getElementById(id);
+
+function render() {
+  const [text, opts] = Q[current];
+  $("qTag").textContent = "QUESTION " + (current + 1);
+  $("qText").textContent = text;
+  $("progressText").textContent = "QUESTION " + (current + 1) + " OF " + Q.length;
+  const pct = Math.round((current / Q.length) * 100);
+  const MS = { 11: "Nice start!", 23: "Halfway there!", 34: "Almost done!", 45: "Last one!" };
+  $("progressPct").textContent = pct + "% " + (MS[current] || "");
+  $("progressFill").style.width = pct + "%";
+  $("backBtn").disabled = current === 0;
+
+  const box = $("options");
+  box.innerHTML = "";
+  opts.forEach((opt, i) => {
+    const b = document.createElement("button");
+    b.className = "opt" + (answers[current] === i ? " selected" : "");
+    b.textContent = opt[0];
+    b.onclick = () => choose(i);
+    box.appendChild(b);
+  });
+}
+
+function choose(i) {
+  answers[current] = i;
+  document.querySelectorAll(".opt").forEach((el, idx) => el.classList.toggle("selected", idx === i));
+  setTimeout(() => {
+    if (current < Q.length - 1) { 
+      current++; 
+      render(); 
+    } else { 
+      showResults(); 
+    }
+  }, 250);
+}
+
+async function showResults() {
+  const score = { T:0, R:0, H:0, M:0, E:0 };
+  answers.forEach((a, qi) => {
+    if (a !== null) {
+      const cat = Q[qi][1][a][1];
+      if (cat) score[cat]++;
+    }
+  });
+
+  const pcts = {};
+  ORDER.forEach(c => pcts[c] = Math.round((score[c] / (MAX[c] || 1)) * 100));
+  const ranked = ORDER.slice().sort((a, b) => pcts[b] - pcts[a]);
+  const t1 = ranked[0], t2 = ranked[1];
+  const top = CATS[t1], R1 = REC[t1];
+
+  $("resEmoji").textContent = R1.emoji;
+  $("resTitle").textContent = "Best fit: " + CATS[t1].name;
+  $("resArchetype").textContent = top.title + " • " + R1.type;
+  $("resDesc").textContent = top.desc;
+
+  // Radar chart
+  const cx = 150, cy = 150, rad = 105;
+  const pt = (i, v) => {
+    const a = -Math.PI / 2 + i * 2 * Math.PI / 5;
+    return [cx + Math.cos(a) * rad * v, cy + Math.sin(a) * rad * v];
+  };
+
+  let grid = "";
+  [0.25, 0.5, 0.75, 1].forEach(l => {
+    grid += '<polygon points="' + ORDER.map((_, i) => pt(i, l).join(",")).join(" ") + '" fill="none" stroke="#bae6fd" stroke-width="1.5"/>';
+  });
+
+  ORDER.forEach((_, i) => {
+    const e = pt(i, 1);
+    grid += '<line x1="150" y1="150" x2="' + e[0] + '" y2="' + e[1] + '" stroke="#bae6fd"/>';
+  });
+
+  const poly = ORDER.map((c, i) => pt(i, Math.max(pcts[c], 6) / 100).join(",")).join(" ");
+  const dots = ORDER.map((c, i) => {
+    const q = pt(i, Math.max(pcts[c], 6) / 100);
+    return '<circle cx="' + q[0] + '" cy="' + q[1] + '" r="5" fill="#10b981" stroke="#fff" stroke-width="2"/>';
+  }).join("");
+
+  const labels = ORDER.map((c, i) => {
+    const q = pt(i, 1.2);
+    return '<text x="' + q[0] + '" y="' + q[1] + '" text-anchor="middle" dominant-baseline="middle" font-size="12" font-weight="800" fill="#1e3a8a">' + CATS[c].name.toUpperCase() + '</text>';
+  }).join("");
+
+  $("radar").innerHTML = '<svg viewBox="0 0 300 300">' + grid + '<g class="radar-shape"><polygon points="' + poly + '" fill="rgba(16, 185, 129, .35)" stroke="#10b981" stroke-width="3"/>' + dots + '</g>' + labels + '</svg>';
+
+  // Pie chart
+  const total = ORDER.reduce((a, c) => a + pcts[c], 0) || 1;
+  const PR = 125, share = c => pcts[c] / total;
+  let ang = -Math.PI / 2, slices = "", labs = "";
+  const active = ORDER.filter(c => pcts[c] > 0);
+
+  active.forEach(c => {
+    const a0 = ang, a1 = ang + share(c) * 2 * Math.PI, mid = (a0 + a1) / 2;
+    const x0 = 150 + PR * Math.cos(a0), y0 = 150 + PR * Math.sin(a0);
+    const x1 = 150 + PR * Math.cos(a1), y1 = 150 + PR * Math.sin(a1);
+    const big = (a1 - a0) > Math.PI ? 1 : 0;
+    const tx = Math.cos(mid) * 10, ty = Math.sin(mid) * 10;
+    const d = active.length === 1 ? '' : 'M150,150 L' + x0 + ',' + y0 + ' A' + PR + ',' + PR + ' 0 ' + big + ' 1 ' + x1 + ',' + y1 + ' Z';
+    slices += active.length === 1
+      ? '<circle class="pie-slice" data-c="' + c + '" cx="150" cy="150" r="' + PR + '" fill="' + COLORS[c] + '" style="--tx:0px;--ty:0px"/>'
+      : '<path class="pie-slice" data-c="' + c + '" d="' + d + '" fill="' + COLORS[c] + '" style="--tx:' + tx + 'px;--ty:' + ty + 'px"/>';
+    
+    if (share(c) >= 0.06) {
+      const lx = 150 + Math.cos(mid) * PR * 0.62, ly = 150 + Math.sin(mid) * PR * 0.62;
+      const light = (c === "H" || c === "E");
+      labs += '<text x="' + lx + '" y="' + ly + '" text-anchor="middle" dominant-baseline="middle" font-size="15" font-weight="800" fill="' + (light ? "#1e3a8a" : "#fff") + '" pointer-events="none">' + Math.round(share(c) * 100) + '%</text>';
+    }
+    ang = a1;
+  });
+
+  $("donut").innerHTML = '<svg viewBox="0 0 300 300" width="320">' + slices + labs + '</svg>';
+  $("legend").innerHTML = ORDER.map(c => '<span><i style="background:' + COLORS[c] + '"></i>' + CATS[c].name + ' ' + Math.round(share(c) * 100) + '%</span>').join("");
+
+  const showInfo = c => {
+    document.querySelectorAll(".pie-slice").forEach(el => el.classList.toggle("sel", el.dataset.c === c));
+    const r = REC[c];
+    $("pieInfo").innerHTML = '<h4>' + r.emoji + ' ' + CATS[c].name + ' • ' + Math.round(share(c) * 100) + '% of you</h4><p>' + CATS[c].desc + '</p><ul>' + CATS[c].careers.slice(0, 3).map(x => '<li>' + x + '</li>').join("") + '</ul>';
+  };
+
+  document.querySelectorAll(".pie-slice").forEach(el => {
+    el.onclick = () => showInfo(el.dataset.c);
+    el.onmouseenter = () => showInfo(el.dataset.c);
+  });
+  showInfo(t1);
+
+  // Bars
+  $("resBars").innerHTML = ranked.map((c, i) =>
+    '<div class="rank-row' + (i === 0 ? " top" : "") + '"><div class="rank-label"><span>' + REC[c].emoji + " " + CATS[c].name.toUpperCase() + '</span><span>' + pcts[c] + '%</span></div><div class="rank-bar"><div style="width:' + pcts[c] + '%"></div></div></div>'
+  ).join("");
+
+  // Recommendations
+  const li = a => "<ul>" + a.map(x => "<li>" + x + "</li>").join("") + "</ul>";
+  const cards = [
+    ["💼", "Careers to explore", top.careers],
+    ["🎓", "Majors & minors", R1.study],
+    ["📚", "High school classes", R1.classes],
+    ["🏆", "Activities & competitions", R1.acts],
+    ["💡", "Skills to build", R1.skills]
+  ];
+  $("recGrid").innerHTML = cards.map(c => '<div class="rec-card"><div class="ic">' + c[0] + '</div><h4>' + c[1] + '</h4>' + li(c[2]) + '</div>').join("");
+
+  // Blend
+  const key = [t1, t2].sort().join("");
+  $("resSecond").textContent = "Your top two are " + CATS[t1].name + " and " + CATS[t2].name + ". Paths that combine them: " + (BLEND[key] || "Custom STEM research");
+  $("resChips").innerHTML = [t1, t2].map(c => '<span class="chip">' + REC[c].emoji + ' ' + CATS[c].name + '</span>').join("");
+
+  // Gemini API Call for Custom AI Analysis
+  try {
+    const aiBox = $("aiReasoning");
+    aiBox.textContent = "Generating custom AI recommendation reasoning...";
+    const res = await fetch("/api/recommendations", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ scores: pcts, topCategories: [t1, t2] })
+    });
+    if (res.ok) {
+      const data = await res.json();
+      aiBox.textContent = data.reasoning || "";
+    } else {
+      aiBox.textContent = "";
+    }
+  } catch (err) {
+    $("aiReasoning").textContent = "";
+  }
+
+  $("quiz").classList.add("hidden");
+  $("results").classList.remove("hidden");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  confetti();
+}
+
+function confetti() {
+  const cv = $("confetti"), ctx = cv.getContext("2d");
+  cv.width = window.innerWidth;
+  cv.height = window.innerHeight;
+  const cols = Object.values(COLORS).concat(["#d1fae5", "#e0f2fe"]);
+  const ps = Array.from({ length: 140 }, () => ({
+    x: Math.random() * cv.width,
+    y: -20 + Math.random() * cv.height * 0.5,
+    s: 6 + Math.random() * 6,
+    v: 2 + Math.random() * 4,
+    d: Math.random() * 6,
+    c: cols[Math.floor(Math.random() * cols.length)]
+  }));
+
+  let f = 0;
+  (function step() {
+    ctx.clearRect(0, 0, cv.width, cv.height);
+    ps.forEach(p => {
+      p.y += p.v;
+      p.x += Math.sin((f + p.d * 10) / 20) * 1.5;
+      ctx.fillStyle = p.c;
+      ctx.fillRect(p.x, p.y, p.s, p.s * 0.6);
+    });
+    if (++f < 220) requestAnimationFrame(step);
+    else ctx.clearRect(0, 0, cv.width, cv.height);
+  })();
+}
+
+$("backBtn").onclick = () => { if (current > 0) { current--; render(); } };
+$("retakeBtn").onclick = () => {
+  answers.fill(null);
+  current = 0;
+  $("results").classList.add("hidden");
+  $("quiz").classList.remove("hidden");
+  render();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
+
+render();
+</script>
+</body>
+</html>

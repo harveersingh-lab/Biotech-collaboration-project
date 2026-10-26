@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recommended Programs | SCIDERIZER</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Hidden Audio Player for Lo-Fi Music -->
+<iframe class="audio-bg" src="https://www.youtube.com/embed/6H-PLF2CR18?autoplay=1&loop=1&playlist=6H-PLF2CR18&controls=0" allow="autoplay"></iframe>
+
+<!-- Fixed Header Container -->
+<div class="fixed-header-wrapper">
+  <!-- Ticker Bar -->
+  <div class="ticker-bar">
+    <div class="ticker-track">
+      <span>NO CONFUSION &bull; 100% STEM TALENT &bull; CAREER READY &bull; UNLOCK YOUR POTENTIAL &bull; SCIDERIZER BIO </span>
+      <span>NO CONFUSION &bull; 100% STEM TALENT &bull; CAREER READY &bull; UNLOCK YOUR POTENTIAL &bull; SCIDERIZER BIO </span>
+    </div>
+  </div>
+  <!-- Header Navigation Bar -->
+  <header class="navbar">
+    <a href="index.html" class="logo-link">
+      <div class="logo-wrapper">
+        <svg class="sciderizer-logo-svg" viewBox="0 0 320 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M 12 60 L 28 35 C 30 31 35 30 38 33 L 42 66 L 18 72 Z" fill="#0284c7" stroke="#1e3a8a" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M 38 36 C 42 34 50 32 60 38 C 72 45 80 40 85 40 C 89 40 92 45 90 50 C 86 60 72 68 56 68 C 46 68 40 65 38 60 Z" fill="#ffffff" stroke="#1e3a8a" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M 50 48 C 58 53 68 52 74 46" stroke="#0284c7" stroke-width="2.5" stroke-linecap="round"/>
+          <ellipse cx="64" cy="22" rx="16" ry="6" stroke="#10b981" stroke-width="2" transform="rotate(-15 64 22)"/>
+          <ellipse cx="64" cy="22" rx="16" ry="6" stroke="#38bdf8" stroke-width="2" transform="rotate(45 64 22)"/>
+          <circle cx="64" cy="22" r="4.5" fill="#10b981"/>
+          <text x="100" y="48" font-family="'Space Grotesk', sans-serif" font-weight="800" font-size="30" fill="#1e3a8a" letter-spacing="-0.5">Sciderizer</text>
+          <path d="M 102 56 L 245 56" stroke="#10b981" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="250" cy="56" r="2.5" fill="#38bdf8"/>
+        </svg>
+      </div>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html" class="nav-item">Home</a>
+      <a href="about.html" class="nav-item">About</a>
+      <a href="test.html" class="btn-nav nav-item">Take the Test!</a>
+    </nav>
+  </header>
+</div>
+
+<!-- Recommended Programs Main Section -->
+<section class="programs-section">
+  <div class="container">
+    <div class="section-title-wrap">
+      <span class="pill-badge">OPPORTUNITIES & GROWTH</span>
+      <h2>RECOMMENDED PROGRAMS</h2>
+      <p>Explore curated STEM programs, competitions, summer research, and internships tailored by grade level.</p>
+    </div>
+
+    <!-- Filter Tabs -->
+    <div class="filter-tabs">
+      <button class="tab-btn active" onclick="filterGrade('all', this)">All Programs</button>
+      <button class="tab-btn" onclick="filterGrade('grade9', this)">9th / Rising 10th</button>
+      <button class="tab-btn" onclick="filterGrade('grade10', this)">10th / Rising 11th</button>
+      <button class="tab-btn" onclick="filterGrade('grade11', this)">11th / Rising 12th</button>
+      <button class="tab-btn" onclick="filterGrade('internships', this)">Internships</button>
+    </div>
+
+    <!-- Programs Grid -->
+    <div class="programs-grid">
+      <!-- HOSA -->
+      <div class="program-card grade9 grade10 grade11">
+        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80" alt="HOSA Healthcare Research" class="program-img" />
+        <span class="program-type">HEALTHCARE & CTSO</span>
+        <h3>HOSA: Future Health Professionals</h3>
+        <p class="program-desc">An instructional program preparing students for healthcare careers including dentist, registered nurse, and biotechnology research & development.</p>
+        <div class="program-details">
+          <span>3-60 minutes</span>
+          <span>Grades 9-12</span>
+        </div>
+        <a href="https://hosa.org" target="_blank" rel="noopener noreferrer" class="program-btn">Visit Website &rarr;</a>
+      </div>
+
+      <!-- TSA -->
+      <div class="program-card grade9 grade10 grade11">
+        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=600&q=80" alt="Technology Student Association" class="program-img" />
+        <span class="program-type">COMPETITION & STEM</span>
+        <h3>Technology Student Association (TSA)</h3>
+        <p class="program-desc">Allows students to compete in science and technology activities leading to potential careers such as architect, biotechnologist, and engineer.</p>
+        <div class="program-details">
+          <span>3-60 minutes</span>
+          <span>Grades 9-12</span>
+        </div>
+        <a href="https://tsaweb.org" target="_blank" rel="noopener noreferrer" class="program-btn">Visit Website &rarr;</a>
+      </div>
+
+      <!-- SkillsUSA -->
+      <div class="program-card grade9 grade10 grade11">
+        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="SkillsUSA Technical Training" class="program-img" />
+        <span class="program-type">SKILLED TRADES & TECH</span>
+        <h3>SkillsUSA</h3>
+        <p class="program-desc">National organization for technical and CTE students, offering competitions in trade, technical, and skilled-service fields within school chapters.</p>
+        <div class="program-details">
+          <span>2-5 days</span>
+          <span>Grades 9-12</span>
+        </div>
+        <a href="https://www.skillsusa.org" target="_blank" rel="noopener noreferrer" class="program-btn">Visit Website &rarr;</a>
+      </div>
+
+      <!-- Rutgers THED -->
+      <div class="program-card grade10 grade11">
+        <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=600&q=80" alt="Rutgers Toxicology Lab" class="program-img" />
+        <span class="program-type">SUMMER PROGRAM</span>
+        <h3>Rutgers Toxicology, Health, & Env. Disease (THED)</h3>
+        <p class="program-desc">Non-residential week at Rutgers EOHSI in Piscataway, NJ covering lab ethics, experimental design, genetics, drug disposition, and clinical toxicology.</p>
+        <div class="program-details">
+          <span>5 days</span>
+          <span>Grades 10-12</span>
+          <span>Piscataway, NJ</span>
+        </div>
+        <a href="https://eohsi.rutgers.edu" target="_blank" rel="noopener noreferrer" class="program-btn">Visit Website &rarr;</a>
+      </div>
+
+      <!-- Partners in Science -->
+      <div class="program-card grade9">
+        <img src="https://images.unsplash.com/photo-1507668077129-56e32842fceb?auto=format&fit=crop&w=600&q=80" alt="Scientific Research Workshop" class="program-img" />
+        <span class="program-type">SUMMER RESEARCH</span>
+        <h3>Partners in Science Summer Program</h3>
+        <p class="program-desc">Immersive hands-on workshops and guided mini-projects providing high school students a foundational introduction to scientific research.</p>
+        <div class="program-details">
+          <span>2 weeks</span>
+          <span>Grades 9-10</span>
+        </div>
+        <a href="https://www.libertysciencecenter.org" target="_blank" rel="noopener noreferrer" class="program-btn">Visit Website &rarr;</a>
+      </div>
+
+      <!-- TCNJ Science Summer Program -->
+      <div class="program-card grade10">
+        <img src="https://images.unsplash.com/photo-1564325724739-bae0bd08762c?auto=format&fit=crop&w=600&q=80" alt="TCNJ Science Lab" class="program-img" />
+        <span class="program-type">LAB & SUSTAINABILITY</span>
+        <h3>TCNJ Science Summer Program</h3>
+        <p class="program-desc">Hands-on lab experience spanning biology, chemistry, physics, CS, math, biopharma sustainability, and hydroponics.</p>
+        <div class="program-details">
+          <span>4 days</span>
+          <span>Grade 10 / Rising 11th</span>
+          <span>Ewing, NJ</span>
+        </div>
+        <a href="https://science.tcnj.edu" target="_blank" rel="noopener noreferrer" class="program-btn">Visit Website &rarr;</a>
+      </div>
+
+      <!-- CMU Computational Biology -->
+      <div class="program-card grade10 grade11">
+        <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80" alt="Carnegie Mellon Coding and Biology" class="program-img" />
+        <span class="program-type">COMPUTATIONAL BIO</span>
+        <h3>Carnegie Mellon Computational Biology</h3>
+        <p class="program-desc">Splits time between wet-lab work and hackathon coding, covering metagenomics, genome assembly, sequence alignment, and robotics.</p>
+        <div class="program-details">
+          <span>4 weeks</span>
+          <span>Sophomores & Juniors</span>
+          <span>Pittsburgh, PA</span>
+        </div>
+        <a href="https://www.cmu.edu/pre-college" target="_blank" rel="noopener noreferrer" class="program-btn">Visit Website &rarr;</a>
+      </div>
+
+      <!-- Princeton Science Outreach -->
+      <div class="program-card grade10 grade11">
+        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80" alt="Princeton University Research" class="program-img" />
+        <span class="program-type">RESEARCH INTERNSHIP</span>
+        <h3>Princeton University Science Outreach</h3>
+        <p class="program-desc">Summer research internship at Princeton University where high school students participate in active research projects under faculty mentors.</p>
+        <div class="program-details">
+          <span>5-6 weeks</span>
+          <span>Grades 10-12</span>
+          <span>Princeton, NJ</span>
+        </div>
+        <a href="https://research.princeton.edu" target="_blank" rel="noopener noreferrer" class="program-btn">Visit Website &rarr;</a>
+      </div>
+
+      <!-- Talon Biomarkers -->
+      <div class="program-card internships">
+        <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=600&q=80" alt="Biomedical Assay Lab" class="program-img" />
+        <span class="program-type">INTERNSHIP</span>
+        <h3>Talon Biomarkers</h3>
+        <p class="program-desc">Biomedical and assay laboratory setting experience for students interested in clinical research, testing, and diagnostic biomarker analysis.</p>
+        <div class="program-details">
+          <span>Flexible / Summer</span>
+          <span>High School / College</span>
+        </div>
+        <a href="https://talonbiomarkers.com" target="_blank" rel="noopener noreferrer" class="program-btn">Visit Website &rarr;</a>
+      </div>
+
+      <!-- AEOP -->
+      <div class="program-card internships">
+        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=600&q=80" alt="Army Educational Outreach STEM Lab" class="program-img" />
+        <span class="program-type">INTERNSHIP</span>
+        <h3>AEOP Internships and Fellowships</h3>
+        <p class="program-desc">Army Educational Outreach Program offering paid STEM research internships with university faculty and army research labs nationwide.</p>
+        <div class="program-details">
+          <span>Summer / Multi-Week</span>
+          <span>High School Students</span>
+          <span>Nationwide / Remote</span>
+        </div>
+        <a href="https://www.usaeop.com" target="_blank" rel="noopener noreferrer" class="program-btn">Visit Website &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Growth Banner Callout -->
+    <div class="growth-banner">
+      <p><strong>And more opportunities to come!</strong> This list expands every year. Keep yourself updated!</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2026 SCIDERIZER. Empowering the next generation of scientific minds.</p>
+  </div>
+</footer>
+
+<script src="sound.js"></script>
+<script>
+function filterGrade(grade, btnElement) {
+  document.querySelectorAll('.filter-tabs .tab-btn').forEach(b => b.classList.remove('active'));
+  btnElement.classList.add('active');
+  const cards = document.querySelectorAll('.program-card');
+  cards.forEach(card => {
+    if (grade === 'all' || card.classList.contains(grade)) {
+      card.style.display = 'flex';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+</script>
+</body>
+</html>
